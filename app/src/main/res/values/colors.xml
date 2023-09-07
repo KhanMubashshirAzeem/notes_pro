@@ -6,8 +6,8 @@
     <color name="softWhite">#f2f2f2</color>
     <color name="lightBlue">#3399ff</color>
     <color name="green">#2eb82e</color>
-    <color name="highLighter">#d1997b</color>
-    <color name="light">#f2e2d9</color>
-    <color name="dark">#714128</color>
+    <color name="highLighter">#4dd2ff</color>
+    <color name="light">#FFF</color>
+    <color name="dark">#005ce6</color>
     <color name="yellow">#ffbf80</color>
 </resources>

@@ -42,6 +42,7 @@
         <item name="android:layout_marginLeft">16sp</item>
         <item name="android:layout_marginRight">16sp</item>
         <item name="android:background">@drawable/round_corner</item>
+        <item name="android:backgroundTint">@color/highLighter</item>
         <item name="fontFamily">@font/oxygen_regular</item>
     </style>
 
