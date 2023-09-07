@@ -2,8 +2,65 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.NotesPro" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/highLighter</item>
+        <item name="colorPrimaryVariant">@color/highLighter</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/highLighter</item>
     </style>
 
+
     <style name="Theme.NotesPro" parent="Base.Theme.NotesPro" />
+
+    <style name="header">
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_margin">16sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">32sp</item>
+        <item name="fontFamily">@font/oxygen_bold</item>
+    </style>
+
+    <style name="EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">8sp</item>
+        <item name="android:layout_marginStart">16sp</item>
+        <item name="android:layout_marginEnd">16sp</item>
+        <item name="android:background">@drawable/round_corner</item>
+        <item name="android:backgroundTint">@color/light</item>
+        <item name="fontFamily">@font/oxygen_regular</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_marginTop">32sp</item>
+        <item name="android:layout_marginLeft">16sp</item>
+        <item name="android:layout_marginRight">16sp</item>
+        <item name="android:background">@drawable/round_corner</item>
+        <item name="fontFamily">@font/oxygen_regular</item>
+    </style>
+
+    <style name="progressBar">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_margin">12dp</item>
+    </style>
+
+    <style name="textview_small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/softBlack</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_marginTop">16sp</item>
+    </style>
+
+
 </resources>

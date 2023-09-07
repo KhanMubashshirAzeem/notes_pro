@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/highLighter"
+    tools:context=".NotesDetailsActivity">
+
+    <TextView
+        android:id="@+id/pageTitle"
+        style="@style/header"
+        android:text="Add New note"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/dark"
+        android:textColor="@color/softWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/saveNote"
+        android:layout_width="32sp"
+        android:layout_height="32sp"
+        android:src="@drawable/check"
+        android:layout_margin="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/pageTitle"
+        app:layout_constraintEnd_toEndOf="@+id/pageTitle"
+        app:layout_constraintTop_toTopOf="@+id/pageTitle" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="18sp"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/light"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/deleteNote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pageTitle">
+
+        <EditText
+            android:id="@+id/AddTitle"
+            style="@style/EditText"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/light"
+            android:hint="Title"
+            android:inputType="text"
+            android:textStyle="bold"
+            tools:ignore="Autofill,HardcodedText,TextFields" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/highLighter" />
+
+        <EditText
+            android:id="@+id/AddContent"
+            style="@style/EditText"
+            android:backgroundTint="@color/light"
+            android:gravity="top"
+            android:hint="Content"
+            android:minLines="15"
+            tools:ignore="Autofill,TextFields" />
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/deleteNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48sp"
+        android:layout_marginStart="48sp"
+        android:layout_marginBottom="12dp"
+        android:visibility="gone"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/dark"
+        android:padding="3dp"
+        android:text="Delete Note"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

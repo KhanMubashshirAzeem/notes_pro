@@ -4,15 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/highLighter"
     tools:context=".MainActivity">
 
-    <TextView
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNoteFloatingBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:src="@drawable/add"
+        android:layout_margin="16sp"
+        android:backgroundTint="@color/softWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/titleNotes"
+        style="@style/header"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/dark"
+        android:text="Notes"
+        android:textColor="@color/softWhite"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="32sp"
+        android:layout_height="32sp"
+        android:src="@drawable/menu"
+        android:layout_margin="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/titleNotes"
+        app:layout_constraintEnd_toEndOf="@+id/titleNotes"
+        app:layout_constraintTop_toTopOf="@+id/titleNotes" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_margin="12sp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleNotes" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
