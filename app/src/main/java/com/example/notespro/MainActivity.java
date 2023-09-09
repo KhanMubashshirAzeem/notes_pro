@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         binding.addNoteFloatingBtn.setOnClickListener((v) -> startActivity(new Intent(MainActivity.this, NotesDetailsActivity.class)));
         menuView.setOnClickListener((V) -> showMenu());
         setUpRecyclerView();
+
+
     }
 
     void showMenu() {
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                if (item.getTitle()=="Logout"){
+                if (item.getTitle() == "Logout"){
                     FirebaseAuth.getInstance().signOut();
                     Toast.makeText(MainActivity.this, "Logout Successfully", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(MainActivity.this, LoginActivity.class));
@@ -68,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter= new noteAdapter(options, this);
         recyclerView.setAdapter(adapter);
-
     }
 
     @Override

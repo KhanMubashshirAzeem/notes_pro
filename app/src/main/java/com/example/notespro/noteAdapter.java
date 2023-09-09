@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +18,8 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 public class noteAdapter extends FirestoreRecyclerAdapter<NotesModel, noteAdapter.viewHolder> {
 
     Context context;
+    private int lastPosition = -1;
+
     public noteAdapter(@NonNull FirestoreRecyclerOptions<NotesModel> options, Context context) {
         super(options);
         this.context = context;
@@ -27,25 +31,28 @@ public class noteAdapter extends FirestoreRecyclerAdapter<NotesModel, noteAdapte
         holder.contentTv.setText(model.content);
         holder.timestampTv.setText(utility.timeStampToString(model.timestamp));
 
-        holder.itemView.setOnClickListener((v)->{
-            Intent intent = new Intent(context,NotesDetailsActivity.class);
-            intent.putExtra("title",model.title);
-            intent.putExtra("content",model.content);
+        holder.itemView.setOnClickListener((v) -> {
+            Intent intent = new Intent(context, NotesDetailsActivity.class);
+            intent.putExtra("title", model.title);
+            intent.putExtra("content", model.content);
             String docId = this.getSnapshots().getSnapshot(position).getId();
-            intent.putExtra("docId",docId);
+            intent.putExtra("docId", docId);
             context.startActivity(intent);
         });
+
+        setAnimation(holder.itemView, position);
     }
 
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_note_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_note_item, parent, false);
         return new viewHolder(view);
     }
 
-    static class viewHolder extends RecyclerView.ViewHolder{
+    static class viewHolder extends RecyclerView.ViewHolder {
         TextView titleTv, contentTv, timestampTv;
+
         public viewHolder(@NonNull View itemView) {
             super(itemView);
             titleTv = itemView.findViewById(R.id.title);
@@ -55,5 +62,15 @@ public class noteAdapter extends FirestoreRecyclerAdapter<NotesModel, noteAdapte
 
         }
     }
+
+
+    private void setAnimation(View view, int position) {
+        if (position > lastPosition) {
+            Animation animation = AnimationUtils.loadAnimation(context, R.anim.scale_in);
+            view.startAnimation(animation);
+            lastPosition = position;
+        }
+    }
+
 
 }

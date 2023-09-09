@@ -70,7 +70,6 @@ public class NotesDetailsActivity extends AppCompatActivity {
     void deleteNoteFromFireBase() {
         DocumentReference documentReference;
             documentReference = utility.getcollectionReferenceForNotes().document(docId);
-
         documentReference.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
