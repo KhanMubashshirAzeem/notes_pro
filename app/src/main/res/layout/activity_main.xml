@@ -7,47 +7,72 @@
     android:background="@color/highLighter"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/layoutTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12sp"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="6dp"
+            android:onClick="BackPress"
+            android:padding="8dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            />
+
+        <TextView
+            android:id="@+id/titleNotes"
+            style="@style/header"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/round_corner"
+            android:backgroundTint="@color/dark"
+            android:text="Notes"
+            android:textColor="@color/softWhite"
+            />
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="8sp"
+            android:padding="12sp"
+            android:src="@drawable/menu" />
+
+    </LinearLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addNoteFloatingBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/add"
         android:layout_margin="16sp"
-        android:backgroundTint="@color/softWhite"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/dark"
+        android:src="@drawable/add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="ContentDescription" />
-
-    <TextView
-        android:id="@+id/titleNotes"
-        style="@style/header"
-        android:background="@drawable/round_corner"
-        android:backgroundTint="@color/dark"
-        android:text="Notes"
-        android:textColor="@color/softWhite"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/menu"
-        android:layout_width="32sp"
-        android:layout_height="32sp"
-        android:src="@drawable/menu"
-        android:layout_margin="8sp"
-        app:layout_constraintBottom_toBottomOf="@+id/titleNotes"
-        app:layout_constraintEnd_toEndOf="@+id/titleNotes"
-        app:layout_constraintTop_toTopOf="@+id/titleNotes" />
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_margin="12sp"
+        android:layout_margin="6dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleNotes" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutTwo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

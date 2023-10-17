@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -77,6 +78,7 @@ public class NotesDetailsActivity extends AppCompatActivity {
                     Toast.makeText(NotesDetailsActivity.this, "Notes deleted successfully", Toast.LENGTH_SHORT).show();
                     finish();
                 } else {
+                    Log.e("delete", "Error deleting document with ID: " + docId, task.getException());
                     Toast.makeText(NotesDetailsActivity.this, "Failed while deleting a note", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -126,5 +128,9 @@ public class NotesDetailsActivity extends AppCompatActivity {
         });
     }
 
+
+    public void BackPress(View view) {
+        onBackPressed();
+    }
 
 }

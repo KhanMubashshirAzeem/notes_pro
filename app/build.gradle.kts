@@ -11,6 +11,9 @@ android {
         buildFeatures {
             viewBinding = true
         }
+        packagingOptions {
+            exclude ("META-INF/services/javax.annotation.processing.Processor")
+        }
     }
 
     defaultConfig {

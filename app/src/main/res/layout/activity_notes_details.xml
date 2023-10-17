@@ -7,39 +7,65 @@
     android:background="@color/highLighter"
     tools:context=".NotesDetailsActivity">
 
-    <TextView
-        android:id="@+id/pageTitle"
-        style="@style/header"
-        android:text="Add New note"
+    <LinearLayout
+        android:id="@+id/layoutTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12sp"
         android:background="@drawable/round_corner"
         android:backgroundTint="@color/dark"
-        android:textColor="@color/softWhite"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/saveNote"
-        android:layout_width="32sp"
-        android:layout_height="32sp"
-        android:src="@drawable/check"
-        android:layout_margin="8sp"
-        app:layout_constraintBottom_toBottomOf="@+id/pageTitle"
-        app:layout_constraintEnd_toEndOf="@+id/pageTitle"
-        app:layout_constraintTop_toTopOf="@+id/pageTitle" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="BackPress"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="6dp"
+            android:padding="12sp"
+            android:src="@drawable/baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/pageTitle"
+            style="@style/header"
+            android:layout_weight="1"
+            android:text="Add New note"
+            android:textColor="@color/softWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/saveNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12sp"
+            android:layout_margin="6dp"
+            android:src="@drawable/check"
+            android:layout_gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/pageTitle"
+            app:layout_constraintEnd_toEndOf="@+id/pageTitle"
+            app:layout_constraintTop_toTopOf="@+id/pageTitle" />
+
+    </LinearLayout>
+
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="18sp"
+        android:layout_margin="10sp"
         android:background="@drawable/round_corner"
         android:backgroundTint="@color/light"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/deleteNote"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pageTitle">
+        app:layout_constraintTop_toBottomOf="@+id/layoutTwo">
 
         <EditText
             android:id="@+id/AddTitle"
@@ -75,15 +101,16 @@
         android:id="@+id/deleteNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="48sp"
         android:layout_marginStart="48sp"
+        android:layout_marginEnd="48sp"
         android:layout_marginBottom="12dp"
-        android:visibility="gone"
         android:background="@drawable/round_corner"
         android:backgroundTint="@color/dark"
         android:padding="3dp"
         android:text="Delete Note"
+        android:textColor="@color/white"
         android:textSize="18sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

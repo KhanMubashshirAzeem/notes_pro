@@ -2,10 +2,10 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.NotesPro" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/highLighter</item>
+        <item name="colorPrimary">@color/dark</item>
         <item name="colorPrimaryVariant">@color/highLighter</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="android:statusBarColor">@color/highLighter</item>
+        <item name="android:statusBarColor">@color/dark</item>
     </style>
 
 
@@ -13,7 +13,6 @@
 
     <style name="header">
         <item name="android:padding">10dp</item>
-        <item name="android:layout_margin">16sp</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -42,7 +41,8 @@
         <item name="android:layout_marginLeft">16sp</item>
         <item name="android:layout_marginRight">16sp</item>
         <item name="android:background">@drawable/round_corner</item>
-        <item name="android:backgroundTint">@color/highLighter</item>
+        <item name="android:textColor">@color/light</item>
+        <item name="android:backgroundTint">@color/dark</item>
         <item name="fontFamily">@font/oxygen_regular</item>
     </style>
 

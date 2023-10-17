@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                if (item.getTitle() == "Logout"){
+                if (item.getTitle() == "Logout") {
                     FirebaseAuth.getInstance().signOut();
                     Toast.makeText(MainActivity.this, "Logout Successfully", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(MainActivity.this, LoginActivity.class));
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         FirestoreRecyclerOptions<NotesModel> options = new FirestoreRecyclerOptions.Builder<NotesModel>()
                 .setQuery(query, NotesModel.class).build();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter= new noteAdapter(options, this);
+        adapter = new noteAdapter(options, this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -95,12 +96,12 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Alert !");
         builder.setMessage("Do you want to exit?").setCancelable(false)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                finish();
-                            }
-                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(MainActivity.this, "You clicked No.", Toast.LENGTH_SHORT).show();
@@ -113,4 +114,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void BackPress(View view) {
+        onBackPressed();
+    }
+
 }
