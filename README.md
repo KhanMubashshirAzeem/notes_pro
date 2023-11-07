@@ -1,6 +1,7 @@
 # NotePro
 
-This Application is completed 100% in future I will add Images and file sharing also. 
+This Application is completed 100%.
+But in future, I will add the feature to upload Images and files. 
 
 # Screenshots 
 
