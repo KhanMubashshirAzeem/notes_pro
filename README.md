@@ -1,7 +1,6 @@
 # NotePro
 
-This Application is completed 100%.
-But in future, I will add the feature to upload Images and files. 
+## Firebase Database
 
 # Screenshots 
 
