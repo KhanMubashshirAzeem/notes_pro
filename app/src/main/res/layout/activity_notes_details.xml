@@ -67,7 +67,7 @@
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:padding="4dp"
-                android:text="Your notes"
+                android:text="Notes"
                 android:textColor="@color/softBlack"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -95,6 +95,7 @@
                     android:backgroundTint="@color/light"
                     android:hint="Title"
                     android:inputType="text"
+                    android:textColor="@color/softBlack"
                     android:textStyle="bold"
                     tools:ignore="Autofill,HardcodedText,TextFields" />
 
@@ -112,7 +113,8 @@
                     android:backgroundTint="@color/light"
                     android:gravity="top"
                     android:hint="Content"
-                    android:minLines="15"
+                    android:minLines="10"
+                    android:textColor="@color/softBlack"
                     tools:ignore="Autofill,TextFields" />
 
 
@@ -136,7 +138,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_weight="1"
                     android:padding="4dp"
-                    android:text="To Do list"
+                    android:text="To Do"
                     android:textAlignment="viewStart"
                     android:textColor="@color/softBlack"
                     android:textSize="24sp"
@@ -156,12 +158,10 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="240dp"
                 android:layout_margin="12sp"
                 android:background="@drawable/round_corner"
-                android:backgroundTint="@color/light"
                 android:padding="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/deleteNote"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -172,6 +172,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="48sp"
+                android:layout_marginTop="12sp"
                 android:layout_marginEnd="48sp"
                 android:layout_marginBottom="12dp"
                 android:background="@drawable/round_corner"
@@ -180,10 +181,11 @@
                 android:text="Delete Note"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerView2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
