@@ -6,25 +6,20 @@
     android:layout_height="match_parent"
     android:background="@color/highLighter"
     android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".SplashActivity">
+    android:gravity="center_vertical"
+    tools:context=".Activity.SplashActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="56sp"
-        android:fontFamily="@font/handwriting"
-        android:text="Notes Pro"
-        android:gravity="center_horizontal"
-        android:textColor="@color/dark"
+        android:src="@drawable/note_text"
+        android:layout_gravity="bottom"
         />
     
     <ProgressBar
         style="@style/progressBar"
         android:layout_height="56dp"
         android:layout_width="56dp"
-        android:layout_margin="24sp"
         android:indeterminateTint="@color/dark"
         android:visibility="visible"
         />

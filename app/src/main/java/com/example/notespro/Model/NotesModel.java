@@ -1,11 +1,11 @@
-package com.example.notespro;
+package com.example.notespro.Model;
 
 import com.google.firebase.Timestamp;
 
 public class NotesModel {
-    String title;
-    String content;
-    Timestamp timestamp;
+    public String title;
+    public String content;
+    public Timestamp timestamp;
 
     public NotesModel() {
     }

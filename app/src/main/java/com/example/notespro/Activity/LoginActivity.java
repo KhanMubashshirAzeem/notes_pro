@@ -1,4 +1,4 @@
-package com.example.notespro;
+package com.example.notespro.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.notespro.databinding.ActivityLoginBinding;
-import com.example.notespro.databinding.ActivitySignUpBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -76,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 finish();
                             } else {
-                                Toast.makeText(LoginActivity.this, "Email is not verified, Please verify your email.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Verify your email.", Toast.LENGTH_SHORT).show();
                             }
                         } else {
                             Toast.makeText(LoginActivity.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
@@ -105,6 +104,11 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
 

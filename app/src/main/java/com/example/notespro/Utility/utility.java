@@ -1,4 +1,4 @@
-package com.example.notespro;
+package com.example.notespro.Utility;
 
 import android.annotation.SuppressLint;
 
@@ -14,14 +14,14 @@ import java.util.Objects;
 public class utility {
 
 
-    static CollectionReference getcollectionReferenceForNotes(){
+    public static CollectionReference getcollectionReferenceForNotes(){
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         return FirebaseFirestore.getInstance().collection("notes")
                 .document(Objects.requireNonNull(currentUser).getUid()).collection("myNotes");
     }
 
     @SuppressLint("SimpleDateFormat")
-    static String timeStampToString(Timestamp timestamp){
+    public static String timeStampToString(Timestamp timestamp){
         return new SimpleDateFormat("MM,dd,yyyy").format(timestamp.toDate());
     }
 

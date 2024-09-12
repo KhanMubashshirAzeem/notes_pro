@@ -1,4 +1,4 @@
-package com.example.notespro;
+package com.example.notespro.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,11 +43,13 @@ public class signUpActivity extends AppCompatActivity {
         createAccount = binding.createAccount;
 
         createAccount.setOnClickListener(v -> createAccountMethod());
+
         binding.alreadyLogin.setOnClickListener(v -> {
             Intent intent = new Intent(signUpActivity.this , LoginActivity.class);
             startActivity(intent);
             finish();
         });
+
 
     }
 
@@ -112,6 +114,11 @@ public class signUpActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
 

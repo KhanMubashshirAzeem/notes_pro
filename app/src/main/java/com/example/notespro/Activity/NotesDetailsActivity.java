@@ -1,4 +1,4 @@
-package com.example.notespro;
+package com.example.notespro.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +13,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.notespro.Model.NotesModel;
 import com.example.notespro.databinding.ActivityNotesDetailsBinding;
+import com.example.notespro.Utility.utility;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
@@ -50,7 +52,6 @@ public class NotesDetailsActivity extends AppCompatActivity {
 
         if (docId != null && !docId.isEmpty()) {
             isEditMode = true;
-
         }
 
         etTitle.setText(Title);
